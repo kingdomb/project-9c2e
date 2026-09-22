@@ -13,8 +13,30 @@
     />
     <title>GA Granite &#8211; Fine Natural &amp; Engineered Stone</title>
     <meta name="description" content="Private client preview build. Not the live gagranite.com site." />
-    <script type="module" crossorigin src="/project-9c2e/assets/index-CAGvadel.js"></script>
-    <link rel="stylesheet" crossorigin href="/project-9c2e/assets/index-XzMPIeLt.css">
+    <!-- Decodes the redirect 404.html builds when GitHub Pages can't find a
+         path-based route directly (e.g. a bookmarked /before-after link),
+         and restores the real URL before React Router reads it. Paired
+         script: see public/404.html. -->
+    <script type="text/javascript">
+      ;(function (l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search
+            .slice(1)
+            .split('&')
+            .map(function (s) {
+              return s.replace(/~and~/g, '&')
+            })
+            .join('?')
+          window.history.replaceState(
+            null,
+            null,
+            l.pathname.slice(0, -1) + decoded + l.hash
+          )
+        }
+      })(window.location)
+    </script>
+    <script type="module" crossorigin src="/project-9c2e/assets/index-BMO00qhM.js"></script>
+    <link rel="stylesheet" crossorigin href="/project-9c2e/assets/index-DetpeZyq.css">
   </head>
   <body>
     <div id="root"></div>
